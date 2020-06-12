@@ -225,12 +225,10 @@ class InstagramBot():
 
 
 if __name__ == '__main__':
-    postgres_username = 'postgres'
-    postgres_password = 'semenmorozov15'
-    # insta_username = input('Enter Instagram username:')
-    # insta_password = input('Enter Instagram password')
-    # postgres_username = input('Enter postgres username')
-    # postgres_password = input('Enter postgres password')
+    insta_username = input('Enter Instagram username:')
+    insta_password = input('Enter Instagram password')
+    postgres_username = input('Enter postgres username')
+    postgres_password = input('Enter postgres password')
     # CONNECT TO POSTGRES DB
     con = psycopg2.connect(
         database="postgres",
@@ -242,14 +240,7 @@ if __name__ == '__main__':
     visited_db = 'usernames_visited_1'
     queue_db = 'usernames_queue_1'
     data_db = 'data_1'
-
-    DD = ('tikhobaev_insta_research', 'troglodit50!')
-    '''creds = [('ilya_tikhobaev', 'koronayxodi!!'),
-             ('omar_eps_', 'troglodit50!'),
-             ('ivan_vasyliev__', 'troglodit50!')]'''
-    creds = [ ('ivan_gudko_nn', 'troglodit50!'),
-              ('ilya_yarmilov', 'troglodit50!'),
-              ('_gvidon_vishnevskiy_', 'troglodit50!')]
+    creds = [insta_username, insta_password]
     current_index = 0
     bot = InstagramBot(creds[0][0], creds[0][1])
     bot.signIn()
